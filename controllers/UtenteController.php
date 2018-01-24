@@ -75,7 +75,7 @@ class UtenteController extends Controller
             $model = new Utente();
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                $model->password = sha1($model->password);
+                $model->password = crypt($model->password, "WMF");
                 $model->save();
                 return $this->redirect(['view', 'id' => $model->id_utente]);
             } else {
@@ -100,7 +100,7 @@ class UtenteController extends Controller
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                $model->password = sha1($model->password);
+                $model->password = crypt($model->password, "WMF");
                 $model->save();
                 return $this->redirect(['view', 'id' => $model->id_utente]);
             } else {
