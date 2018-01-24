@@ -55,7 +55,7 @@ AppAsset::register($this);
             ],
         ]);
     }
-    if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == "admin"){
+    if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == 'admin'){
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => [
@@ -78,7 +78,7 @@ AppAsset::register($this);
             ],
         ]);
     }
-    if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == "operatore"){
+    if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == 'operatore'){
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => [
@@ -99,7 +99,7 @@ AppAsset::register($this);
             ],
         ]);
     }
-    NavBar::end();
+    NavBar::end(); 
     ?>
 
     <div class="container">
@@ -115,7 +115,7 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; Smart Museum <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= "Developed by WMF team" ?></p>
+        <p class="pull-right"><?= 'Developed by WMF team' ?></p>
     </div>
 </footer>
 

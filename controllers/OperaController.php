@@ -66,16 +66,16 @@ class OperaController extends Controller
      */
     public function actionView($id)
     {
-        if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == "operatore" and $this->findModel($id)->id_museo ==               Yii::$app->getUser()->identity->id_museo) {
+        if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == 'operatore' and $this->findModel($id)->id_museo ==               Yii::$app->getUser()->identity->id_museo) {
             return $this->render('view', [
                 'model' => $this->findModel($id),
             ]);
-        } elseif (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == "admin"){
+        } elseif (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == 'admin'){
             return $this->render('view', [
                 'model' => $this->findModel($id),
             ]);
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
         }
     }
 
@@ -97,7 +97,7 @@ class OperaController extends Controller
                 ]);
             }
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
         }
     }
 
@@ -109,7 +109,7 @@ class OperaController extends Controller
      */
     public function actionUpdate($id)
     {
-        if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == "operatore" and $this->findModel($id)->id_museo ==                Yii::$app->getUser()->identity->id_museo) {
+        if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == 'operatore' and $this->findModel($id)->id_museo ==                Yii::$app->getUser()->identity->id_museo) {
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -130,7 +130,7 @@ class OperaController extends Controller
                 ]);
             }
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
         }
     }
 
@@ -142,16 +142,16 @@ class OperaController extends Controller
      */
     public function actionDelete($id)
     {
-        if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == "operatore" and $this->findModel($id)->id_museo ==                Yii::$app->getUser()->identity->id_museo) {
+        if (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == 'operatore' and $this->findModel($id)->id_museo ==                Yii::$app->getUser()->identity->id_museo) {
             $this->findModel($id)->delete();
             return $this->redirect(['index']);
 
-        } elseif (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == "admin") {
+        } elseif (isset($_SESSION['__id']) and Yii::$app->getUser()->identity->ruolo == 'admin') {
             $this->findModel($id)->delete();
             return $this->redirect(['index']);
 
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
         }
     }
 
