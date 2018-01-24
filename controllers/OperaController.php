@@ -55,7 +55,7 @@ class OperaController extends Controller
                 'dataProvider' => $dataProvider,
             ]);
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
         }
     }
 
