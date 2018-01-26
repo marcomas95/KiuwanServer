@@ -1,5 +1,7 @@
 <?php
 
+define("N_ERROR", 301);
+
 namespace app\controllers;
 
 use Yii;
@@ -55,7 +57,7 @@ class OperaController extends Controller
                 'dataProvider' => $dataProvider,
             ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -75,7 +77,7 @@ class OperaController extends Controller
                 'model' => $this->findModel($id),
             ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -97,7 +99,7 @@ class OperaController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -130,7 +132,7 @@ class OperaController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -151,7 +153,7 @@ class OperaController extends Controller
             return $this->redirect(['index']);
 
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 

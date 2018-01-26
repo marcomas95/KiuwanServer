@@ -1,5 +1,8 @@
 <?php
 
+define("MAXS1", 255);
+define("MAXS3", 2048);
+
 namespace app\models;
 
 use Yii;
@@ -36,8 +39,8 @@ class Museo extends \yii\db\ActiveRecord
         return [
             [['nome', 'indirizzo', 'apertura', 'chiusura'], 'required'],
             [['apertura', 'chiusura'], 'safe'],
-            [['nome', 'indirizzo', 'immagine'], 'string', 'max' => 255],
-            [['descrizione'], 'string', 'max' => 2048],
+            [['nome', 'indirizzo', 'immagine'], 'string', 'max' => MAXS1],
+            [['descrizione'], 'string', 'max' => MAXS3],
             [['nome'], 'unique'],
             [['indirizzo'], 'unique'],
         ];

@@ -1,5 +1,9 @@
 <?php
 
+define("MAXS1", 255);
+define("MAXS2", 511);
+define("MAXS3", 2048);
+
 namespace app\models;
 
 use Yii;
@@ -37,9 +41,9 @@ class Opera extends \yii\db\ActiveRecord
         return [
             [['titolo', 'categoria', 'autore', 'id_museo'], 'required'],
             [['pubblico', 'id_museo'], 'integer'],
-            [['titolo', 'categoria', 'immagine', 'video'], 'string', 'max' => 255],
-            [['autore'], 'string', 'max' => 511],
-            [['descrizione'], 'string', 'max' => 2048],
+            [['titolo', 'categoria', 'immagine', 'video'], 'string', 'max' => MAXS1],
+            [['autore'], 'string', 'max' => MAXS2],
+            [['descrizione'], 'string', 'max' => MAXS3],
             [['titolo'], 'unique'],
             [['id_museo'], 'exist', 'skipOnError' => true, 'targetClass' => Museo::className(), 'targetAttribute' => ['id_museo' => 'id_museo']],
         ];

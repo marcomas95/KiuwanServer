@@ -1,5 +1,7 @@
 <?php
 
+define("N_ERROR", 301);
+
 namespace app\controllers;
 
 use app\models\Operatore;
@@ -63,7 +65,7 @@ class MuseoController extends Controller
                 'dataProvider' => $dataProvider,
             ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -79,7 +81,7 @@ class MuseoController extends Controller
                 'model' => $this->findModel($id),
             ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -101,7 +103,7 @@ class MuseoController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -124,7 +126,7 @@ class MuseoController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
@@ -140,7 +142,7 @@ class MuseoController extends Controller
             $this->findModel($id)->delete();
             return $this->redirect(['index']);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  301 );  exit;
+            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
         }
     }
 
