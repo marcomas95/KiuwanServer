@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Opera */
 
-$this->title = 'Create Opera';
+$this->title = 'Crea Opera';
 $this->params['breadcrumbs'][] = ['label' => 'Operas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

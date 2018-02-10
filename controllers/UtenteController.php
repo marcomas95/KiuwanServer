@@ -1,7 +1,5 @@
 <?php
 
-define("N_ERROR", 301);
-
 namespace app\controllers;
 
 use Yii;
@@ -37,7 +35,7 @@ class UtenteController extends Controller
      */
     public function actionIndex()
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')) {
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")) {
             $searchModel = new UtenteSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -46,7 +44,7 @@ class UtenteController extends Controller
                 'dataProvider' => $dataProvider,
             ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -57,12 +55,12 @@ class UtenteController extends Controller
      */
     public function actionView($id)
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')) {
-            return $this->render('view', [
-                'model' => $this->findModel($id),
-            ]);
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")) {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -73,7 +71,7 @@ class UtenteController extends Controller
      */
     public function actionCreate()
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')) {
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")) {
             $model = new Utente();
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -86,7 +84,7 @@ class UtenteController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -98,7 +96,7 @@ class UtenteController extends Controller
      */
     public function actionUpdate($id)
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')) {
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")) {
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -111,7 +109,7 @@ class UtenteController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -119,16 +117,16 @@ class UtenteController extends Controller
      * Deletes an existing Utente model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @return mixed 
+     * @return mixed
      */
     public function actionDelete($id)
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')) {
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")) {
             $this->findModel($id)->delete();
 
             return $this->redirect(['index']);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php',  true,  N_ERROR );  exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 

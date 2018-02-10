@@ -1,8 +1,5 @@
 <?php
 
-define("MAXS1", 255);
-define("MAXS3", 2048);
-
 namespace app\models;
 
 use Yii;
@@ -19,7 +16,7 @@ use Yii;
  * @property string $immagine
  *
  * @property Opera[] $operas
- * @property Utente[] $utentes
+ * @property Utente[] $utente
  */
 class Museo extends \yii\db\ActiveRecord
 {
@@ -39,9 +36,11 @@ class Museo extends \yii\db\ActiveRecord
         return [
             [['nome', 'indirizzo', 'apertura', 'chiusura'], 'required'],
             [['apertura', 'chiusura'], 'safe'],
-            [['nome', 'indirizzo', 'immagine'], 'string', 'max' => MAXS1],
-            [['descrizione'], 'string', 'max' => MAXS3],
+            [['nome', 'indirizzo', 'immagine'], 'string', 'max' => 255],
+            [['descrizione'], 'string', 'max' => 2048],
             [['nome'], 'unique'],
+            [['apertura'], 'date', 'format'=>'H:i'],
+            [['chiusura'], 'date', 'format'=>'H:i'],
             [['indirizzo'], 'unique'],
         ];
     }
@@ -55,8 +54,8 @@ class Museo extends \yii\db\ActiveRecord
             'id_museo' => 'Id Museo',
             'nome' => 'Nome',
             'indirizzo' => 'Indirizzo',
-            'apertura' => 'Apertura',
-            'chiusura' => 'Chiusura',
+            'apertura' => 'Apertura (hh:mm)',
+            'chiusura' => 'Chiusura (hh:mm)',
             'descrizione' => 'Descrizione',
             'immagine' => 'Immagine',
         ];
@@ -73,7 +72,7 @@ class Museo extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUtentes()
+    public function getUtente()
     {
         return $this->hasMany(Utente::className(), ['id_museo' => 'id_museo']);
     }

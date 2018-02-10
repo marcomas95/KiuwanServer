@@ -25,6 +25,24 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'descrizione') ?>
 
+    <?php // echo $form->field($model, 'proprietario') ?>
+
+    <?php // echo $form->field($model, 'materiali') ?>
+
+    <?php // echo $form->field($model, 'tecnica') ?>
+
+    <?php // echo $form->field($model, 'periodo_storico') ?>
+
+    <?php // echo $form->field($model, 'dimensioni') ?>
+
+    <?php // echo $form->field($model, 'peso') ?>
+
+    <?php // echo $form->field($model, 'movimento_artistico') ?>
+
+    <?php // echo $form->field($model, 'valore') ?>
+
+    <?php // echo $form->field($model, 'restaurato') ?>
+
     <?php // echo $form->field($model, 'pubblico') ?>
 
     <?php // echo $form->field($model, 'id_museo') ?>

@@ -2,8 +2,9 @@
 
 namespace app\models;
 
-use Yii;
+use kop\y2cv\ConditionalValidator;
 use yii\web\IdentityInterface;
+
 
 /**
  * This is the model class for table "Utente".
@@ -21,7 +22,7 @@ class Utente extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function tableName()
     {
-        return 'utente';
+        return 'Utente';
     }
 
     /**
@@ -35,7 +36,16 @@ class Utente extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             [['id_museo'], 'integer'],
             [['username', 'password'], 'string', 'max' => 255],
             [['username'], 'unique'],
-            [['id_museo'], 'exist', 'skipOnError' => true, 'targetClass' => Museo::className(), 'targetAttribute' => ['id_museo' => 'id_museo']],
+            [['id_museo'], ConditionalValidator::className(),
+                'if' => [
+                    [['ruolo'], 'compare', 'compareValue' => 'operatore']
+                ],
+                'then' => [
+                    [['id_museo'], 'required']
+                ]
+            ],
+
+            [['id_museo'], 'exist', 'skipOnError' => true, 'targetClass' => Museo::className(), 'targetAttribute' => ['id_museo' => 'id_museo']]
         ];
     }
 

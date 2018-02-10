@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\MuseoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Museos';
+$this->title = 'Gestione Musei';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="museo-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Museo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crea Museo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

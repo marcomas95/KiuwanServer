@@ -2,10 +2,6 @@
 
 namespace app\controllers;
 
-define("N_ERROR", 301);
-
-
-
 use app\models\Operatore;
 use Yii;
 use app\models\Museo;
@@ -58,7 +54,7 @@ class MuseoController extends Controller
      */
     public function actionIndex()
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')){
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")){
             $searchModel = new MuseoSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -67,7 +63,7 @@ class MuseoController extends Controller
                 'dataProvider' => $dataProvider,
             ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php'); exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -78,12 +74,12 @@ class MuseoController extends Controller
      */
     public function actionView($id)
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')){
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")){
             return $this->render('view', [
                 'model' => $this->findModel($id),
             ]);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php' ); exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -94,7 +90,7 @@ class MuseoController extends Controller
      */
     public function actionCreate()
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')){
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")){
             $model = new Museo();
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -105,7 +101,7 @@ class MuseoController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php' ); exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -117,7 +113,7 @@ class MuseoController extends Controller
      */
     public function actionUpdate($id)
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')){
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")){
             $model = $this->findModel($id);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -128,7 +124,7 @@ class MuseoController extends Controller
                 ]);
             }
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php'); exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 
@@ -140,11 +136,11 @@ class MuseoController extends Controller
      */
     public function actionDelete($id)
     {
-        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == 'admin')){
+        if (isset($_SESSION['__id']) and (Yii::$app->getUser()->identity->ruolo == "admin")){
             $this->findModel($id)->delete();
             return $this->redirect(['index']);
         } else {
-            header('location: /Project/Server/SmartMuseum/web/index.php' ); exit;
+            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
         }
     }
 

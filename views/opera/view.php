@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Opera */
 
-$this->title = $model->id_opera;
-$this->params['breadcrumbs'][] = ['label' => 'Operas', 'url' => ['index']];
+$this->title = 'Gestione Opera';
+$this->params['breadcrumbs'][] = ['label' => 'Opere', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="opera-view">
@@ -33,6 +33,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'categoria',
             'autore',
             'descrizione',
+            'proprietario',
+            'materiali',
+            'tecnica',
+            'periodo_storico',
+            'dimensioni',
+            'peso',
+            'movimento_artistico',
+            'valore',
+            'restaurato',
             'pubblico',
             'id_museo',
             'immagine',
@@ -41,3 +50,11 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
+<?php
+$dimensione=200;
+$livello_codifica=1;
+$margine=1;
+$url= $model->id_opera;
+echo ' <center> <img src="http://chart.apis.google.com/chart?chs='.$dimensione.'x'.$dimensione.'&cht=qr&chld='.$livello_codifica.'|'.$margine.'&chl='.$url.'" alt="QRCode" widhtHeight="'.$dimensione.'" widhtHeight="'.$dimensione.'"/> </center>';
+echo "<p>";
+echo '<center><a class="mybut btn btn-primary btn-mini" href="http://chart.apis.google.com/chart?chs='.$dimensione.'x'.$dimensione.'&cht=qr&chld='.$livello_codifica.'|'.$margine.'&chl='.$url.'" download="http://chart.apis.google.com/chart?chs='.$dimensione.'x'.$dimensione.'&cht=qr&chld='.$livello_codifica.'|'.$margine.'&chl='.$url.'">DOWNLOAD QR CODE</a></center>';

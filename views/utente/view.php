@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Utente */
 
-$this->title = $model->id_utente;
-$this->params['breadcrumbs'][] = ['label' => 'Utentes', 'url' => ['index']];
+$this->title = 'Gestione Utenti';
+$this->params['breadcrumbs'][] = ['label' => 'Utenti', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="utente-view">

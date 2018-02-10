@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Museo */
 
-$this->title = $model->id_museo;
-$this->params['breadcrumbs'][] = ['label' => 'Museos', 'url' => ['index']];
+$this->title = 'Gestione Museo';
+$this->params['breadcrumbs'][] = ['label' => 'Musei', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="museo-view">

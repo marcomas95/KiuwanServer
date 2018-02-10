@@ -1,9 +1,5 @@
 <?php
 
-define("MAXS1", 255);
-define("MAXS2", 511);
-define("MAXS3", 2048);
-
 namespace app\models;
 
 use Yii;
@@ -16,7 +12,16 @@ use Yii;
  * @property string $categoria
  * @property string $autore
  * @property string $descrizione
- * @property integer $pubblico
+ * @property string $proprietario
+ * @property string $materiali
+ * @property string $tecnica
+ * @property string $periodo_storico
+ * @property string $dimensioni
+ * @property double $peso
+ * @property string $movimento_artistico
+ * @property double $valore
+ * @property string $restaurato
+ * @property string $pubblico
  * @property integer $id_museo
  * @property string $immagine
  * @property string $video
@@ -39,11 +44,13 @@ class Opera extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titolo', 'categoria', 'autore', 'id_museo'], 'required'],
-            [['pubblico', 'id_museo'], 'integer'],
-            [['titolo', 'categoria', 'immagine', 'video'], 'string', 'max' => MAXS1],
-            [['autore'], 'string', 'max' => MAXS2],
-            [['descrizione'], 'string', 'max' => MAXS3],
+            [['titolo', 'categoria', 'autore', 'descrizione', 'id_museo'], 'required'],
+            [['peso', 'valore'], 'number'],
+            [['restaurato', 'pubblico'], 'string'],
+            [['id_museo'], 'integer'],
+            [['titolo', 'categoria', 'proprietario', 'materiali', 'tecnica', 'periodo_storico', 'dimensioni', 'movimento_artistico', 'immagine', 'video'], 'string', 'max' => 255],
+            [['autore'], 'string', 'max' => 511],
+            [['descrizione'], 'string', 'max' => 2048],
             [['titolo'], 'unique'],
             [['id_museo'], 'exist', 'skipOnError' => true, 'targetClass' => Museo::className(), 'targetAttribute' => ['id_museo' => 'id_museo']],
         ];
@@ -60,10 +67,19 @@ class Opera extends \yii\db\ActiveRecord
             'categoria' => 'Categoria',
             'autore' => 'Autore',
             'descrizione' => 'Descrizione',
+            'proprietario' => 'Proprietario',
+            'materiali' => 'Materiali',
+            'tecnica' => 'Tecnica',
+            'periodo_storico' => 'Periodo Storico',
+            'dimensioni' => 'Dimensioni',
+            'peso' => 'Peso',
+            'movimento_artistico' => 'Movimento Artistico',
+            'valore' => 'Valore',
+            'restaurato' => 'Restaurato',
             'pubblico' => 'Pubblico',
             'id_museo' => 'Id Museo',
-            'immagine' => 'Immagine',
-            'video' => 'Video',
+            'immagine' => 'url Immagine',
+            'video' => 'YouTube url Video',
         ];
     }
 

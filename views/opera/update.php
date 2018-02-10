@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Opera */
 
-$this->title = 'Update Opera: ' . $model->id_opera;
-$this->params['breadcrumbs'][] = ['label' => 'Operas', 'url' => ['index']];
+$this->title = 'Aggiorna Opera: ' . $model->id_opera;
+$this->params['breadcrumbs'][] = ['label' => 'Opere', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_opera, 'url' => ['view', 'id' => $model->id_opera]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Aggiorna';
 ?>
 <div class="opera-update">
 

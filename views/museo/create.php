@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Museo */
 
-$this->title = 'Create Museo';
-$this->params['breadcrumbs'][] = ['label' => 'Museos', 'url' => ['index']];
+$this->title = 'Crea Museo';
+$this->params['breadcrumbs'][] = ['label' => 'Musei', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="museo-create">
