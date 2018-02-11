@@ -55,7 +55,7 @@ class OperaController extends Controller
                 'dataProvider' => $dataProvider,
             ]);
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            return $this->redirect(['site/index']);
         }
     }
 
@@ -75,7 +75,7 @@ class OperaController extends Controller
                 'model' => $this->findModel($id),
             ]);
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            return $this->redirect(['site/index']);
         }
     }
 
@@ -97,7 +97,7 @@ class OperaController extends Controller
                 ]);
             }
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            return $this->redirect(['site/index']);
         }
     }
 
@@ -130,7 +130,7 @@ class OperaController extends Controller
                 ]);
             }
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            return $this->redirect(['site/index']);
         }
     }
 
@@ -151,7 +151,7 @@ class OperaController extends Controller
             return $this->redirect(['index']);
 
         } else {
-            header("location: /Project/Server/SmartMuseum/web/index.php",  true,  301 );  exit;
+            return $this->redirect(['site/index']);
         }
     }
 
