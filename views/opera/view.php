@@ -55,6 +55,11 @@ $dimensione=200;
 $livello_codifica=1;
 $margine=1;
 $url= $model->id_opera;
-echo ' <center> <img src="http://chart.apis.google.com/chart?chs='.$dimensione.'x'.$dimensione.'&cht=qr&chld='.$livello_codifica.'|'.$margine.'&chl='.$url.'" alt="QRCode" widhtHeight="'.$dimensione.'" widhtHeight="'.$dimensione.'"/> </center>';
-echo "<p>";
-echo '<center><a class="mybut btn btn-primary btn-mini" href="http://chart.apis.google.com/chart?chs='.$dimensione.'x'.$dimensione.'&cht=qr&chld='.$livello_codifica.'|'.$margine.'&chl='.$url.'" download="http://chart.apis.google.com/chart?chs='.$dimensione.'x'.$dimensione.'&cht=qr&chld='.$livello_codifica.'|'.$margine.'&chl='.$url.'">DOWNLOAD QR CODE</a></center>';
+?>
+
+<td>
+    <tr><center><img src="http://chart.apis.google.com/chart?chs=<?php echo $dimensione ?>x<?php echo $dimensione ?>&cht=qr&chld=<?php echo $livello_codifica ?>|<?php echo $margine ?>&chl=<?php echo $url ?>"></center></tr>
+    <tr><center><a class="mybut btn btn-primary btn-mini" href="http://chart.apis.google.com/chart?chs=<?php echo $dimensione ?>x<?php echo $dimensione ?>&cht=qr&chld=<?php echo $livello_codifica ?>|<?php echo $margine ?>&chl=<?php echo $url ?>" download="http://chart.apis.google.com/chart?chs=<?php echo $dimensione ?>x<?php echo $dimensione ?>&cht=qr&chld=<?php echo $livello_codifica ?>|<?php echo $margine ?>&chl=<?php echo $url ?>">DOWNLOAD QR CODE</a></center></tr>
+
+</td>
+

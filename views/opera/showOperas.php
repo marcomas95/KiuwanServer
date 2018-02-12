@@ -47,5 +47,5 @@ if($numeroOpere == 0){
 */?>
 
 <div class="body-content">
-    <body background="/MUS/images/2.jpg">
+    <body background="/Project/Server/SmartMuseum/images/2.jpg">
 </div>
