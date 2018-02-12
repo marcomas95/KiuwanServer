@@ -19,8 +19,9 @@ $this->title = 'Smart Museum';
                 ['//site/logout'],
                 ['class' => 'btn btn-lg btn-danger', 'data-method'=>'post']);
             echo "$url";
-        } else {
-            echo "<p><a class=\"btn btn-lg btn-success\" href=\"/Project/Server/SmartMuseum/web/index.php?r=site%2Flogin\">Effettua login</a></p>";
+        } else {?>
+            <a class="btn btn-lg btn-success" href="/Project/Server/SmartMuseum/web/index.php?r=site%2Flogin">Effettua login</a>
+            <?php
         }
         ?>
     </div>

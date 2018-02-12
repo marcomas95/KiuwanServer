@@ -3,8 +3,28 @@
 $numeroOpere = 0;
 
 $this->title = 'Panoramica Opere';
+?>
 
-foreach($opera as $o){
+<table>
+    <?php foreach($opera as $o): ?>
+    <td>
+        <tr><center><h1><?php echo $o->titolo; ?></h1></center></tr>
+        <tr><center><h1><?php echo '<img src="' . $o->immagine . '" alt="Not Found.">'; ?></h1></center></tr>
+        <tr><h3><center><?php echo $o->autore; ?></center></h3></tr>
+        <tr><h3><center><?php echo $o->categoria; ?></center></h3></tr>
+        <tr><center><?php echo $o->materiali; ?></center></tr>
+        <tr><center><?php echo $o->periodo_storico; ?></center></tr>
+        <tr><center><?php echo $o->tecnica; ?></center></tr>
+        <tr><center><?php echo $o->movimento_artistico; ?></center></tr>
+        <tr><center><?php echo $o->descrizione; ?></center></tr><hr>
+        <?php $numeroOpere+=1; ?>
+    </td>
+    <?php endforeach; ?>
+</table>
+
+
+<?php
+/*foreach($opera as $o){
     if ($o->id_museo == $id){
         echo "<strong><center><h1>$o->titolo</h1></center></strong>";
         echo "<center>".'<img src="' . $o->immagine . '" alt= "Immagine non presente." style=\'width:60%;\' >'."</center><br>";
@@ -24,7 +44,7 @@ if($numeroOpere == 0){
     echo "<strong><center><h2>Nessuna opera presente nel database!!!</h2></center></strong>";
 }
 
-?>
+*/?>
 
 <div class="body-content">
     <body background="/MUS/images/2.jpg">
