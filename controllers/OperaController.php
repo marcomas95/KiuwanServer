@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+
 use Yii;
 use app\models\Opera;
 use app\models\OperaSearch;
@@ -157,17 +158,19 @@ class OperaController extends Controller
 
     /**
      * Send a json to the client
-     * @param $id
+     *
      */
-    public function actionSend($id)
+    public function actionSend()
     {
-        $opera = Opera::findOne(['id_opera' => $id]);
-        if (($opera == null) or ($opera->pubblico == 0)){
-            echo json_encode(null);
-        } else{
-            $result = $opera->toArray();
-            print(json_encode($result));
-        }
+        $database = (new \yii\db\Query())
+            ->select('*')
+            ->from('opera')
+            ->where(['pubblico' => 'si'])
+            ->all();
+
+        if ($database == null) echo json_encode(null);
+        else echo json_encode($database);
+
     }
 
     /**
